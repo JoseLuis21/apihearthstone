@@ -8,13 +8,5 @@
     <div class="text-center" *ngIf="totalRecords > pageSize">
         <pagination-controls (pageChange)="pageChanged($event)" previousLabel='Anterior' nextLabel='Siguiente' id='cardGrid'></pagination-controls>
     </div>
-    <div *ngIf="test">
-        <div class="card-grid">
-            <app-card *ngFor="let card of asyncChracterList | async | paginate: { id: 'cardGrid', itemsPerPage: pageSize, currentPage: page, totalItems: totalRecords}" [card]="card">
-            </app-card>
-        </div>
-    </div>
-    <div class="text-center" *ngIf="totalRecords > pageSize">
-        <pagination-controls (pageChange)="pageChanged($event)" previousLabel='Anterior' nextLabel='Siguiente' id='cardGrid'></pagination-controls>
-    </div>
+   
 </div>
