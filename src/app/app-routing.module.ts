@@ -20,7 +20,7 @@ const routes: Routes = [
         loadChildren: () => import('./components/home/home.module').then(m => m.HomeModule)
       },
       {
-        path: 'cards',
+        path: 'show-card',
         loadChildren: () => import('./components/card/card.module').then(m => m.CardModule)
       }
     ]

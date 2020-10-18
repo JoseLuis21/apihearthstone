@@ -1,1 +1,58 @@
-<p>card works!</p>
+<div class="loading-mask" *ngIf="loading"> </div>
+<div class="container" *ngIf="card">
+    <h3>Hearthstone -  #{{ card.id }} - {{ card.name }} </h3>
+
+    
+    <div class="row center-xs" >
+        <div class="col">
+            <mat-card class="card-card">
+                <mat-card-header>
+                  <mat-card-title class="card-title" matTooltipPosition="above">
+                    #{{ card.id }} - {{ card.name }} 
+                  </mat-card-title>
+                </mat-card-header>
+                <img mat-card-image [src]="card.image" alt="">
+                <mat-card-content>
+                    <mat-list>
+                        <mat-list-item>
+                            <p class="card-content-description">{{ card.artistName }}</p>
+                        </mat-list-item>
+                        <br/>
+                        <mat-list-item>
+                            <p class="card-content-description">{{ (card.flavorText | slice:0:160) + (card.flavorText.length > 160 ? '...' : '') }}</p>
+                        </mat-list-item>
+                        <br/>
+                    </mat-list>                    
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col">
+            <mat-card class="card-card" *ngIf="card.imageGold!=''">
+                <mat-card-header>
+                  <mat-card-title class="card-title" matTooltipPosition="above">
+                      {{ card.name }} 
+                  </mat-card-title>
+                </mat-card-header>
+                <img mat-card-image [src]="(card.imageGold=='') ? card.image : card.imageGold" alt="">
+                <mat-card-content>
+                    <mat-list>
+                        <mat-list-item>
+                            <p class="card-content-description">{{ card.artistName }}</p>
+                        </mat-list-item>
+                        <br/>
+                        <mat-list-item>
+                            <p class="card-content-description">{{ (card.flavorText | slice:0:160) + (card.flavorText.length > 160 ? '...' : '') }}</p>
+                        </mat-list-item>
+                        <br/>
+                    </mat-list>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        
+    </div>
+    <a mat-button color="warn"  mat-raised-button routerLink="/home" routerLinkActive="active">Volver al Inicio</a>
+    
+    
+
+ 
+</div>

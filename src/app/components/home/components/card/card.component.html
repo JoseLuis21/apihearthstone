@@ -1,28 +1,21 @@
 
-<mat-card class="card-card">
+<mat-card class="card-card" [routerLink]="['/show-card', card.id]">
     <mat-card-header>
       <mat-card-title class="card-title" [matTooltip]="card.name" matTooltipPosition="above">
-          {{ (card.name | slice:0:13) + (card.name.length > 13 ? '...' : '') }}
+        #{{ card.id }} - {{ card.name }} 
       </mat-card-title>
     </mat-card-header>
     <img mat-card-image [src]="card.image" alt="">
     <mat-card-content>
         <mat-list>
             <mat-list-item>
-                <h3 matLine class="card-content-title" >Habilidad</h3>
-                <p class="card-content-description" [innerHTML]="card.text"></p>
-            </mat-list-item>
-            <mat-divider></mat-divider>
-            <mat-list-item>
-                <h3 matLine>Artista</h3>
                 <p class="card-content-description">{{ card.artistName }}</p>
             </mat-list-item>
-            <mat-divider></mat-divider>
+            <br/>
             <mat-list-item>
-                <h3 matLine>Audio en texto</h3>
-                <p class="card-content-description">{{ card.flavorText }}</p>
+                <p class="card-content-description">{{ (card.flavorText | slice:0:160) + (card.flavorText.length > 160 ? '...' : '') }}</p>
             </mat-list-item>
-            <mat-divider></mat-divider>
+            <br/>
         </mat-list>
     </mat-card-content>
 </mat-card>

@@ -15,7 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
-  declarations: [SearchCardComponent, HomeComponent, CardComponent, BannerComponent],
+  declarations: [HomeComponent, CardComponent, BannerComponent, SearchCardComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,

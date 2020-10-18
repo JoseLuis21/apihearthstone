@@ -1,1 +1,31 @@
-<p>search-card works!</p>
+<div class="container">
+<h2>Buscardor de Cartas:</h2>
+<mat-form-field>
+    <mat-label>ID del Personaje</mat-label>
+    <input matInput type="number" [(ngModel)]="cardId">
+</mat-form-field>
+<mat-form-field>
+    <mat-label>Nombre</mat-label>
+    <input matInput type="text" [(ngModel)]="cardName">
+</mat-form-field>
+<mat-form-field>
+    <mat-label>Selecciona Una Clase</mat-label>
+    <mat-select [(value)]="cardClass">
+        <mat-option>None</mat-option>
+        <mat-option value="demonhunter">Cazador de Demonios</mat-option>
+        <mat-option value="druid">Druida</mat-option>
+        <mat-option value="hunter">Cazador</mat-option>
+        <mat-option value="mage">Mago</mat-option>
+        <mat-option value="paladin">Paladin</mat-option>
+        <mat-option value="priest">Sacerdote</mat-option>
+        <mat-option value="rogue">Picaro</mat-option>
+        <mat-option value="shaman">Chaman</mat-option>
+        <mat-option value="warlock">Brujo</mat-option>
+        <mat-option value="warrior">Guerrero</mat-option>
+        <mat-option value="neutral">Neutral</mat-option>
+    </mat-select>
+</mat-form-field>
+
+<button mat-raised-button color="primary" (click)="search()">Buscar</button>
+<button mat-raised-button color="primary" (click)="doTryLuck()">Mostrar Todos</button>
+</div>

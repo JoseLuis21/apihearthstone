@@ -12,9 +12,8 @@ import Swiper from 'swiper';
 export class AppComponent {
   title = 'app';
 
-  constructor(private AuthService:AuthService)
+  constructor()
   {
-    // AuthService.setCardLoggedIn();
   }
 
   ngOnInit() {
