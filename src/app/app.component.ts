@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from './core/services/auth/auth.service';
-import { Injectable } from '@angular/core';
-import { UtilFunctions } from 'src/app/utils/CommonsUtils';
-import Swiper from 'swiper';
+
 
 @Component({
   selector: 'app-root',
@@ -12,8 +10,9 @@ import Swiper from 'swiper';
 export class AppComponent {
   title = 'app';
 
-  constructor()
+  constructor(authService : AuthService)
   {
+    authService.checkLocalStorage();
   }
 
   ngOnInit() {

@@ -6,9 +6,8 @@ import { map, take, tap } from 'rxjs/operators';
 import Swiper from 'swiper';
 import { Search } from 'src/app/core/models/search';
 import { MatSnackBar, MatSnackBarConfig, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material';
-import { UtilFunctions } from 'src/app/utils/CommonsUtils';
 import { SearchResult } from 'src/app/core/models/response/search-result';
-import { AuthService } from 'src/app/core/services/auth/auth.service';
+
 
 
 @Component({
@@ -29,7 +28,7 @@ export class HomeComponent implements OnInit {
   pageSize: number;
   asyncChracterList: Observable<Card[]>;
 
-  constructor(private cardService: CardService, private snackBar: MatSnackBar, authService : AuthService)
+  constructor(private cardService: CardService, private snackBar: MatSnackBar)
   {
     this.showDefaultGrid = false;
     this.test = false;
@@ -38,7 +37,7 @@ export class HomeComponent implements OnInit {
     this.pageSize = 20;
     this.totalRecords = 0;
 
-    authService.checkLocalStorage();
+    
   }
 
  
