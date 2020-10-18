@@ -12,7 +12,7 @@ export class AppComponent {
 
   constructor(authService : AuthService)
   {
-    authService.checkLocalStorage();
+    authService.setCardLoggedIn();
   }
 
   ngOnInit() {
