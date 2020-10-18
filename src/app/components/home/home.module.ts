@@ -6,13 +6,28 @@ import { SearchCardComponent } from './components/search-card/search-card.compon
 import { HomeComponent } from './components/home/home.component';
 import { CardComponent } from './components/card/card.component';
 import { BannerComponent } from './components/banner/banner.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { MaterialModule } from '../material/material.module';
+import { FormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { HttpClientModule } from '@angular/common/http'; 
+
 
 
 @NgModule({
   declarations: [SearchCardComponent, HomeComponent, CardComponent, BannerComponent],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    SharedModule,
+    HomeRoutingModule,
+    MaterialModule,
+    FormsModule,
+    NgxPaginationModule,
+    HttpClientModule
+  ],
+  exports: [
+    HomeComponent
   ]
 })
 export class HomeModule { }

@@ -7,6 +7,10 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './components/layout/layout.component';
+import { SharedModule } from './shared/shared.module';
+import { MaterialModule } from './components/material/material.module';
+import { PageNotFoundModule } from './components/page-not-found/page-not-found.module';
+
 
 
 @NgModule({
@@ -20,7 +24,10 @@ import { LayoutComponent } from './components/layout/layout.component';
     HttpClientModule,
     BrowserAnimationsModule,
     NgxPaginationModule,
-    FormsModule
+    MaterialModule,
+    SharedModule,
+    FormsModule,
+    PageNotFoundModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -21,10 +21,14 @@
   text-align: center;
 }
 
+.row {
+  margin: 0 !important;
+}
+
 @media (min-width: 510px) {
 
   .container {
-    max-width: 1110px;
+    max-width: 100%;
     padding-right: 16px;
     padding-left: 16px;
   }
@@ -50,5 +54,10 @@ html, body { height: 100%; }
 body { 
     margin: 0; 
     font-family: Roboto, "Helvetica Neue", sans-serif; 
-    background-color: #37474F;
+    display: flex;
+    background-color: #002650;
+    background-position: top center;
+    background-repeat: repeat;
+    border-top: 1px solid rgba(255,255,255,.1);
+    color: white;
 }
